@@ -15,6 +15,8 @@ export default function App() {
 
     const form = new FormData()
 
+    //Append the rest of the items to fill all the collumns on the database
+      
     form.append('image', img)
 
     fetch('http://localhost:3000/uploadMealPic', {
