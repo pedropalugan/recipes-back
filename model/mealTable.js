@@ -1,6 +1,8 @@
 const database = require('../config/dbConnect')
 const Sequelize = require('sequelize')
 
+//Create the rest of the columns of this table
+
 const meal = database.define('meal',{
     id: {
         type: Sequelize.INTEGER,
