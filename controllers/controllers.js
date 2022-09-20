@@ -10,12 +10,12 @@ const login = require('../model/login')
 class Controllers {
     static async postMeal(req, res){
         await database.sync()
-         let img = await fs.readFileSync(path.join(__dirname, '../uploads/' + req.file.filename)) 
+        let img = await fs.readFileSync(path.join(__dirname, '../uploads/' + req.file.filename)) 
         let request = await meal.create({
-            image: img,
+            pic : img
         })
         res.send('Dado add')
-        fs.unlinkSync(path.join(__dirname, "../uploads/" + req.file.filename)) 
+        fs.unlinkSync(path.join(__dirname, "../uploads/" + req.file.filename))
     }
 }
 
