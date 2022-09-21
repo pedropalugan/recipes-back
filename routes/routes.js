@@ -19,6 +19,9 @@ const upload = multer({storage})
 const Controllers = require('../controllers/controllers')
 
 Router
-    .post('/uploadMealPic', upload.single('image'), Controllers.postMeal)
+    .get('/', Controllers.getData)
+    .post('/uploadMealPic', upload.single('pic'), Controllers.postMeal)
+    .post('/newUser', Controllers.newUser)
+    .post('/loginUser', Controllers.loginUser)
 
 module.exports = Router

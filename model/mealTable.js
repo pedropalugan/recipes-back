@@ -9,12 +9,8 @@ const meal = database.define('meal',{
         primaryKey: true
     },
     pic: Sequelize.BLOB('long'),
-    titulo: Sequelize.STRING,
-    desc: Sequelize.STRING,
-    modo: Sequelize.STRING,
-    ing: Sequelize.STRING,
-    dificuldade: Sequelize.STRING,
-    criador: Sequelize.STRING
 });
+
+database.sync()
 
 module.exports = meal;
