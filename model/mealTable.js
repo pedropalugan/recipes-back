@@ -9,6 +9,9 @@ const meal = database.define('meal',{
         primaryKey: true
     },
     pic: Sequelize.BLOB('long'),
+    titulo: Sequelize.STRING,
+    ing : Sequelize.TEXT,
+    modo: Sequelize.TEXT
 });
 
 database.sync()

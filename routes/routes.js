@@ -20,7 +20,7 @@ const Controllers = require('../controllers/controllers')
 
 Router
     .get('/', Controllers.getData)
-    .post('/uploadMealPic', upload.single('pic'), Controllers.postMeal)
+    .post('/postMeal', upload.single('pic'), Controllers.postMeal)
     .post('/newUser', Controllers.newUser)
     .post('/loginUser', Controllers.loginUser)
 
