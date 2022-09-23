@@ -20,8 +20,10 @@ const Controllers = require('../controllers/controllers')
 
 Router
     .get('/', Controllers.getData)
+    .get('/:id', Controllers.getDatabyPk)
     .post('/postMeal', upload.single('pic'), Controllers.postMeal)
     .post('/newUser', Controllers.newUser)
     .post('/loginUser', Controllers.loginUser)
+    .put('/updateData', Controllers.updateData)
 
 module.exports = Router
