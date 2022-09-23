@@ -12,6 +12,10 @@ class Controllers {
     static async getData(req, res){
         await database.sync()
         let request = await meal.findAll({raw : true})
+        console.log(request.length)
+        for(let x = 0; x < request.length; x ++) {
+        fs.writeFileSync(path.join(__dirname, '../download/' + request[x]['id'] + '.png'), request[x]["pic"])
+    }
         res.status(200).json(request)
     }
     static async postMeal(req, res){
