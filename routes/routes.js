@@ -24,6 +24,6 @@ Router
     .post('/postMeal', upload.single('pic'), Controllers.postMeal)
     .post('/newUser', Controllers.newUser)
     .post('/loginUser', Controllers.loginUser)
-    .put('/updateData', Controllers.updateData)
+    .put('/updateData', Controllers.updateData) //maybe it has to be Router.post
 
 module.exports = Router
