@@ -62,6 +62,13 @@ class Controllers {
     }
     static async updateData(req, res){
         console.log(req.body)
+        await database.sync()
+        let request = meal.update(req.body, {where:{id : req.body.id}})
+        res.send('Dado add')
+    }
+    static async deleteData(req, res){
+        await database.sync()
+        let request = meal.destroy({where:{id : req.body.id}})
     }
 }
 

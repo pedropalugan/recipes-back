@@ -1,25 +1,17 @@
-import React from 'react';
-import { View, Text, StatusBar,} from 'react-native';
-import {StyleSheet} from 'react-native'
+const express = require("express")
+const app = express()
+const Sequelize = require("sequelize")
+const cors = require('cors')
+const path = require('path')
+
+const Routes = require('./routes/routes')
+
+const porta = 3000;
+
+app.use(cors())
+app.use(express.json())
+app.use(express.static(path.join(__dirname, "download")))
+app.use('/', Routes)
 
 
-import Routes from './src/routes';
-
-
-function App() {
-  return (
-    <View style={styles.container}>
-      <StatusBar />
-      <Routes />
-    </View>
-  )
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-})
-
-export default App;
+app.listen(porta, () => console.log('Server running on port ' + porta))

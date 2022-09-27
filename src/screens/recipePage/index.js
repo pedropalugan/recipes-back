@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import Axios from 'axios';
+import styles from './style.js'
 
 export default function RecipePage({ navigation }){
 
@@ -19,15 +20,15 @@ export default function RecipePage({ navigation }){
     }, [])
 
     return(
-    <View>
+    <View style={styles.containerS}>
         <Text onPress={() => navigation.navigate("HomeVi")}>⬅</Text>
         <Image source={{uri : `http://localhost:3000/${navigation.state.params.id}.png`}} 
         style={{
-            width: 300,
-            height: 300
+            width: 100,
+            height: 100
         }}
         />
-        <Text>{titulo}</Text>
+        <Text>{titulo}fddsfdsf</Text>
         <Text>{ing}</Text>
         <Text>{modo}</Text>
     </View>

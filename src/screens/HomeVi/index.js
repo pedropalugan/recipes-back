@@ -49,8 +49,8 @@ function HomeVi({ navigation }) {
             {uri.map(index => (
                 <View>
                     <Image source={{uri : `http://localhost:3000/${index}.png`}} style={{
-                        width: 300,
-                        height: 300,
+                        width: 100,
+                        height: 100,
                     }}/>
             <View style={styles.viewContainer}>
                 <TouchableOpacity style={{
